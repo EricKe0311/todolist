@@ -14,6 +14,10 @@ const ListStyle = styled.li`
     const color = hours >= 6 && hours <= 18 ? "black" : "red";
     return color;
   }};
+
+  ::marker {
+    color: green;
+  }
 `;
 
 export default class List extends Component {
