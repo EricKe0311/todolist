@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import styled from "styled-components";
+
+const TitleStyle = styled.h2`
+  color: red;
+`;
 
 class Title extends Component {
   render() {
-    return <h2>待辦事項清單({this.props.todos.length})</h2>;
+    return <TitleStyle>待辦事項清單({this.props.todos.length})</TitleStyle>;
   }
 }
 
