@@ -1,11 +1,20 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 // const ListStyle = styled.li`
 //   color: ${(props) => {
 //     return props.color || "green";
 //   }};
 // `;
+
+const slideInFromRight = keyframes`
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+`;
 
 const ListStyle = styled.li`
   color: ${(props) => {
@@ -18,6 +27,8 @@ const ListStyle = styled.li`
   ::marker {
     color: green;
   }
+
+  animation: ${slideInFromRight} 0.1s linear 1s;
 `;
 
 export default class List extends Component {
