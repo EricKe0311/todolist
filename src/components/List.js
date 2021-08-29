@@ -17,7 +17,7 @@ const slideInFromRight = keyframes`
 `;
 
 const ListStyle = styled.li`
-  color: ${(props) => {
+  color: ${() => {
     const now = new Date();
     const hours = now.getHours();
     const color = hours >= 6 && hours <= 18 ? "black" : "red";
@@ -33,16 +33,15 @@ const ListStyle = styled.li`
 
 export default class List extends Component {
   render() {
+    let { todos, removeTodo } = this.props;
+    console.log(todos);
     console.log(this.props.todos);
 
     return (
       <ol>
-        {this.props.todos.map((todo, index) => {
+        {todos.map((todo, index) => {
           return (
-            <ListStyle
-              key={todo.id}
-              onClick={() => this.props.removeTodo(todo.id)}
-            >
+            <ListStyle key={todo.id} onClick={() => removeTodo(todo.id)}>
               {todo.text}
             </ListStyle>
           );
